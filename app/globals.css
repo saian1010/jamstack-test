@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    min-height: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family:
+      "Avenir Next", "Segoe UI Variable", "SF Pro Display", "Helvetica Neue",
+      Helvetica, Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .rc-pagination-custom {
+    @apply m-0 flex list-none flex-wrap items-center justify-center gap-2.5 p-0;
+  }
+
+  .rc-pagination-custom li {
+    @apply m-0;
+  }
+
+  .rc-pagination-custom .rc-pagination-item,
+  .rc-pagination-custom .rc-pagination-prev,
+  .rc-pagination-custom .rc-pagination-next,
+  .rc-pagination-custom .rc-pagination-jump-prev,
+  .rc-pagination-custom .rc-pagination-jump-next,
+  .rc-pagination-custom .rc-pagination-options-quick-jumper button {
+    @apply inline-flex min-h-12 min-w-12 items-center justify-center rounded-[14px] border border-slate-400/25 bg-white px-4 text-[0.98rem] font-bold text-slate-600 no-underline transition duration-200;
+  }
+
+  .rc-pagination-custom .rc-pagination-item:hover,
+  .rc-pagination-custom .rc-pagination-prev:hover,
+  .rc-pagination-custom .rc-pagination-next:hover,
+  .rc-pagination-custom .rc-pagination-jump-prev:hover,
+  .rc-pagination-custom .rc-pagination-jump-next:hover,
+  .rc-pagination-custom .rc-pagination-item:focus-visible,
+  .rc-pagination-custom .rc-pagination-prev:focus-visible,
+  .rc-pagination-custom .rc-pagination-next:focus-visible,
+  .rc-pagination-custom .rc-pagination-jump-prev:focus-visible,
+  .rc-pagination-custom .rc-pagination-jump-next:focus-visible,
+  .rc-pagination-custom .rc-pagination-options-quick-jumper button:hover,
+  .rc-pagination-custom .rc-pagination-options-quick-jumper button:focus-visible {
+    @apply -translate-y-px border-blue-600/35 text-blue-700 shadow-[0_12px_28px_rgba(37,99,235,0.12)];
+  }
+
+  .rc-pagination-custom .rc-pagination-item-active {
+    @apply border-transparent bg-linear-to-br from-blue-600 to-blue-700 text-white;
+  }
+
+  .rc-pagination-custom .rc-pagination-item-active a {
+    @apply text-inherit;
+  }
+
+  .rc-pagination-custom .rc-pagination-disabled {
+    @apply pointer-events-none cursor-not-allowed text-slate-400 shadow-none;
+  }
+
+  .rc-pagination-custom .rc-pagination-jump-prev,
+  .rc-pagination-custom .rc-pagination-jump-next {
+    @apply min-w-7 px-1.5;
+  }
+
+  .rc-pagination-custom .rc-pagination-jump-prev button,
+  .rc-pagination-custom .rc-pagination-jump-next button,
+  .rc-pagination-custom .rc-pagination-prev button,
+  .rc-pagination-custom .rc-pagination-next button,
+  .rc-pagination-custom .rc-pagination-item a {
+    @apply text-inherit no-underline;
+  }
+
+  .rc-pagination-custom .rc-pagination-options {
+    @apply ml-0 inline-flex items-center justify-center gap-2.5 text-[0.98rem] font-semibold text-slate-600 max-[900px]:w-full;
+  }
+
+  .rc-pagination-custom .rc-pagination-options-quick-jumper {
+    @apply ml-0 inline-flex items-center gap-2.5 max-[900px]:flex-wrap max-[900px]:justify-center;
+  }
+
+  .rc-pagination-custom .rc-pagination-options-quick-jumper input {
+    @apply min-h-12 w-[88px] rounded-[14px] border border-slate-400/25 bg-white px-[14px] text-center text-slate-950;
+  }
+
+  .rc-pagination-custom .rc-pagination-options-quick-jumper input:focus-visible {
+    @apply border-blue-600/35 outline-2 outline-offset-2 outline-blue-600/30;
+  }
+
+  .rc-pagination-custom .rc-pagination-options-quick-jumper button {
+    @apply cursor-pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
